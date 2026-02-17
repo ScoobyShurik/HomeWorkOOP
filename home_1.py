@@ -32,11 +32,13 @@ class Student:
         return ', '.join(map(str, self.finished_courses))
 
     def __str__(self):
-        return (f'Имя: {self.name} \n'
+        result = (f'Имя: {self.name} \n'
                 f'Фамилия: {self.surname} \n'
                 f'Средняя оценка за домашние задания: {self.get_average_grade()} \n'
                 f'Курсы в процессе изучения: {self.get_courses_in_progress()}, \n'
                 f'Завершенные курсы: {self.get_finished_courses()}')
+        return result
+
 
 class Mentor:
     def __init__(self, name, surname):
@@ -45,7 +47,9 @@ class Mentor:
         self.courses_attached = []
 
     def __str__(self):
-        return f'Имя: {self.name} \nФамилия: {self.surname}'
+        result = (f'Имя: {self.name} \n'
+                  f'Фамилия: {self.surname}')
+        return result
 
 class Lecturer(Mentor):
     def __init__(self, name, surname):
@@ -53,7 +57,10 @@ class Lecturer(Mentor):
         self.grades = {}
 
     def __str__(self):
-        return f'Имя: {self.name} \nФамилия: {self.surname} \nСредняя оценка за лекции: {self.get_average_grade()}'
+        result = (f'Имя: {self.name} \n'
+                f'Фамилия: {self.surname} \n'
+                f'Средняя оценка за лекции: {self.get_average_grade()}')
+        return result
 
     def get_average_grade(self):
         all_grades = []
